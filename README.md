@@ -1,5 +1,7 @@
 # Starknet's Counter Workshop
 
+### Counter contract address: 0x3d015d2b4ba7889c3506741683401b748fb7d603ce5a6f34c97ada0e77dbebd
+
 In this workshop, you will learn how to create a simple Starknet smart contract, implement public functions, and events, access external contracts, and use OpenZeppelin's Ownable contract.
 
 After completing each step, run the associated script to verify it has been implemented correctly.
@@ -41,6 +43,7 @@ Initialize the project structure within the cloned repository by using the `Scar
 
 - When initializing the project with `Scarb`, name the package as `counter`
 - Create a new Cairo file under the `src` directory named `counter.cairo`, and add the following starting code:
+
   ```rust
   #[starknet::contract]
   mod Counter {
@@ -48,6 +51,7 @@ Initialize the project structure within the cloned repository by using the `Scar
       struct Storage {}
   }
   ```
+
 - In the `lib.cairo` file remove the code and define the `counter` module
 
 > **Note:** Using any other name will disrupt upcoming steps.
@@ -252,6 +256,7 @@ In this step, we will introduce an external smart contract that acts as a kill s
 
 - In your `Scarb.toml` file, declare the `kill_switch` package as your project dependency under the `[dependencies]` section.
 - In your `Scarb.toml` file, to allow compilation of external contracts for Starknet Foundry, add the following line under the `[[target.starknet-contract]]` section.
+
   ```toml
   build-external-contracts = ["kill_switch::KillSwitch"]
   ```
@@ -392,7 +397,7 @@ Add the external `OpenZeppelin` contracts as a dependency within your project.
 When completed, execute the test suite to verify you've met all the requirements for this section.
 
 ```bash
-$ scarb test
+scarb test
 ```
 
 ### Hints
